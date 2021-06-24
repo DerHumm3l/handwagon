@@ -1,0 +1,12 @@
+{
+  "name": "handwagon",
+  "private": "true",
+  "workspaces": {
+    "packages": [
+      "api-server",
+      "api-client",
+      "web-app"
+    ]
+  },
+  "scripts": {}
+}
