@@ -11,6 +11,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.13.5",
-    "winston": "^3.3.3"
+    "signale": "^1.4.0"
   }
 }

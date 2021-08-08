@@ -1,26 +1,33 @@
-const { createLogger, format, transports } = require("winston");
-const { colorize, combine, printf, splat } = format;
+const { Signale } = require("signale");
 
-const enumerateErrorFormat = format((info) => {
-  if (info instanceof Error) {
-    Object.assign(info, { message: info.stack });
-  }
-  return info;
-});
+const options = {
+  types: {
+    error: {
+      badge: "👎",
+      color: "red",
+    },
+    info: {
+      badge: "👌",
+      color: "white",
+    },
+    success: {
+      badge: "👍",
+      color: "green",
+    },
+    warn: {
+      badge: "👆",
+      color: "yellow",
+    },
+  },
+};
 
-const logger = createLogger({
-  level: "debug",
-  format: combine(
-    enumerateErrorFormat(),
-    colorize(),
-    splat(),
-    printf(({ level, message }) => `${level}: ${message}`)
-  ),
-  transports: [
-    new transports.Console({
-      stderrLevels: ["error"],
-    }),
-  ],
-});
+const settings = {
+  displayTimestamp: true,
+  displayDate: true,
+};
+
+const logger = new Signale(options);
+
+logger.config(settings);
 
 module.exports = logger;
