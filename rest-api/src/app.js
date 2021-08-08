@@ -1,8 +1,15 @@
-import express from "express";
+const express = require("express");
+const routes = require("./routes/v1");
 
 const app = express();
 
-// the following as example
-// https://github.com/hagopj13/node-express-boilerplate
-// also look at this for more information:
-// https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way/
+// parse json request body
+app.use(express.json());
+
+// parse urlencoded request body
+app.use(express.urlencoded({ extended: true }));
+
+// v1 api routes
+app.use("/v1", routes);
+
+module.exports = app;
