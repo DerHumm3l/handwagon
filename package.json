@@ -8,8 +8,5 @@
       "web-app"
     ]
   },
-  "scripts": {},
-  "devDependencies": {
-    "jest": "^27.0.5"
-  }
+  "scripts": {}
 }
