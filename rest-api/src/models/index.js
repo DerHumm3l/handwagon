@@ -1,1 +1,1 @@
-module.exports.List = require("list.model");
+module.exports.Cart = require("cart.model");

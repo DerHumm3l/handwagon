@@ -1,12 +1,12 @@
 const express = require("express");
-const listRoute = require("./list.route");
+const cartRoute = require("./cart.route");
 
 const router = express.Router();
 
 const defaultRoutes = [
   {
-    path: "/list",
-    route: listRoute,
+    path: "/cart",
+    route: cartRoute,
   },
 ];
 

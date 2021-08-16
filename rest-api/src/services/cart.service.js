@@ -1,4 +1,4 @@
-const { List } = require("../models");
+const { Cart } = require("../models");
 
 // CRUD-Methods
 

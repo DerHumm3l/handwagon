@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const userSchema = mongoose.Schema({});
 
 /**
- * @typedef List
+ * @typedef Cart
  */
-const List = mongoose.model("List", userSchema);
+const Cart = mongoose.model("Cart", userSchema);
 
-module.exports = List;
+module.exports = Cart;
