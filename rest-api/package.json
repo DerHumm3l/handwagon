@@ -11,6 +11,7 @@
   "author": "Lukas Maibaum",
   "license": "MIT",
   "dependencies": {
+    "aes-js": "^3.1.2",
     "bcrypt": "^5.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
