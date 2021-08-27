@@ -16,23 +16,9 @@ const cartSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-/**
- * Check if id matches the access key
- * @param {string} id
- * @returns {Promise<boolean>}
- */
-cartSchema.methods.isAccessKeyMatch = async function (id) {
-  const cart = this;
-  return bcrypt.compare(id, cart.accessKey);
+cartSchema.query.byAccessKey = async function (id) {
+  return this.where("accessKey", bcrypt.hashSync(id, 5));
 };
-
-cartSchema.pre("save", async function (next) {
-  const cart = this;
-  if (cart.isModified()) {
-    cart.accessKey = await bcrypt.hash(cart.accessKey, 8);
-  }
-  next();
-});
 
 /**
  * @typedef Cart
