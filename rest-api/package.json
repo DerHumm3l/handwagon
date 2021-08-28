@@ -22,6 +22,7 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "supertest": "^6.1.6"
   }
 }
