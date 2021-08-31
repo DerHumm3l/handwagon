@@ -3,13 +3,15 @@ const bcrypt = require("bcrypt");
 
 const cartSchema = mongoose.Schema(
   {
-    accessKey: {
+    // hashed id
+    hash: {
       type: String,
       required: true,
       index: true,
       unique: true,
     },
-    data: {
+    // encrypted data
+    hex: {
       type: String,
     },
   },
